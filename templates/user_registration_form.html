@@ -1,0 +1,75 @@
+{#Copyright (c) 2020 Cisco and/or its affiliates.#}
+{##}
+{#This software is licensed to you under the terms of the Cisco Sample#}
+{#Code License, Version 1.1 (the "License"). You may obtain a copy of the#}
+{#License at#}
+{##}
+{#               https://developer.cisco.com/docs/licenses#}
+{##}
+{#All use of the material herein must be in accordance with the terms of#}
+{#the License. All rights not expressly granted by the License are#}
+{#reserved. Unless required by applicable law or agreed to separately in#}
+{#writing, software distributed under the License is distributed on an "AS#}
+{#IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express#}
+{#or implied.#}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webex Event User Registration Form</title>
+    <link href="http://www.cisco.com/web/fw/cisco-ui/2.0.5/dist/css/cui-standard.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+<header>
+
+
+</header>
+
+
+{# FORM - gets user info and adds to scheduled meeting#}
+<section id="contact-form" class="cui">
+
+        <form action="#" method="post">
+
+        <div class="form-group">
+            <h1 for="select-type-basic">Available Events for {{ webex_id }}</h1>
+            <label for="session_key">Please select a Session Key</label>
+            <select id="session_key" name="session_key" required>
+                {% for session_key in list %}
+                    <option value="{{ session_key }}">{{ session_key }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <br>
+
+        <h1>Webex Event User Registration Form</h1>
+        <p>Add a User to an Existing Event</p>
+            <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name" id="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name" id="last_name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+            </div>
+
+            <div class="col-6 col-lg-2 base-margin-top">
+                <button type="submit" class="btn btn--primary">Submit</button>
+            </div>
+
+        </form>
+    </div>
+
+</section>
+
+</body>
+</html>
